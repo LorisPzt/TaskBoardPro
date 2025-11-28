@@ -1,1 +1,12 @@
+html, body, app-root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: #f7fafc;
+  color: #0f1724;
+}
+
 /* You can add global styles to this file, and also import other style files */

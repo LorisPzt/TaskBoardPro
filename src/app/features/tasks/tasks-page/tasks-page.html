@@ -1,25 +1,31 @@
-<h2>Liste des tâches</h2>
+<section class="tasks-page">
+  <header class="tasks-header">
+    <h2>Liste des tâches</h2>
+    <div class="actions">
+      <input #titleInput type="text" class="task-input" placeholder="Titre de la tâche" (keyup.enter)="addTask(titleInput.value); titleInput.value='';" />
+      <button class="btn btn-primary" (click)="addTask(titleInput.value); titleInput.value='';">Ajouter</button>
+    </div>
+  </header>
 
+  @if (tasks$ | async; as tasks) {
+    <div class="tasks-grid">
+      @for (t of tasks; track t.id) {
+        <article class="task-card">
+          <div class="task-body">
+            <h3 class="task-title">{{ t.title }}</h3>
+          </div>
+          <div class="task-footer">
+            <button class="btn btn-danger" (click)="removeTask(t.id)">Supprimer</button>
+          </div>
+        </article>
+      }
+    </div>
 
-@if (tasks$ | async; as tasks){
-  <ul>
-    @for (t of tasks; track t.id) {
-      <li>
-        {{t.title}}
-        <button (click)="removeTask(t.id)">Supprimer</button>
-      </li>
+    @if (tasks.length === 0) {
+      <p class="empty">Aucune tâche pour le moment. Ajoute-en une !</p>
     }
-  </ul>
-} @else {
-  <p>Chargement des tâches ...</p>
-}
 
-
-
-
-<h3>Actions</h3>
-
-<input #titleInput type="text" placeholder="Titre de la tâche" (keyup.enter)="addTask(titleInput.value); titleInput.value='';" />
-<button (click)="addTask(titleInput.value); titleInput.value='';">Ajouter</button>
-
-
+  } @else {
+    <p>Chargement des tâches ...</p>
+  }
+</section>
