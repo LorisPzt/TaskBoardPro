@@ -1,0 +1,24 @@
+.highlight-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.highlight-container h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+}
+
+.highlight-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.highlight-container small {
+  opacity: 0.8;
+}

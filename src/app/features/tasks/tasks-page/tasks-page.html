@@ -7,6 +7,8 @@
     </div>
   </header>
 
+  <div #highlightContainer></div>
+
   @if (tasks$ | async; as tasks) {
     <div class="tasks-grid">
       @for (t of tasks; track t.id) {
@@ -15,6 +17,7 @@
             <h3 class="task-title">{{ t.title }}</h3>
           </div>
           <div class="task-footer">
+            <button class="btn btn-highlight" (click)="highlightTask(t.id, t.title)">⭐ Mettre en avant</button>
             <button class="btn btn-danger" (click)="removeTask(t.id)">Supprimer</button>
           </div>
         </article>
