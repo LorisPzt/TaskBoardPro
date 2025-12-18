@@ -1,5 +1,5 @@
 import {Component, inject, ViewChild, ViewContainerRef} from '@angular/core';
-import {Task} from '../../../home/core/services/task';
+import {Task} from '../../../core/services/task';
 import {AsyncPipe} from '@angular/common';
 import {TaskHighlight} from '../task-highlight/task-highlight';
 
